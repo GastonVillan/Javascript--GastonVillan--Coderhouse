@@ -1,21 +1,29 @@
-let usuario=prompt ("ingrese su nombre y apellido");
+ /* segunda pre-entrega Gaston Villan*/
 
-let edad=parseInt (prompt ("ingrese su edad"))
-if (edad >=18) {
-    alert("Bienvenido/a " + usuario + " a nuestro sitio web"); 
+function Producto (nombre, precio,) {
+    this.nombre = nombre;
+    this.precio = parseFloat(precio);
+}
 
-}else if (edad <18){
-    alert(usuario + " No realices compras en nuestro sitio web sin la tutoria de un mayor.")
-};
+const n1_bujia = new Producto("Bujia", 3500);
+const n2_bujiabr = new Producto("Bujiabr", 3500);
+const n3_valvulas = new Producto("valvulas", 8000);
+const n4_platillos = new Producto("PLATILLOS DE VALVULAS", 3100);
+const n5_resortes = new Producto("Resortes de pantalla", 1500);
 
+console.table(n1_bujia);
+console.table(n2_bujiabr);
+console.table(n3_valvulas);
+console.table(n4_platillos);
+console.table(n5_resortes);
 
-alert ("Selecciona los productos que quieras comprar y luego le daremos el valor total de lo que usted selecciono. \n n1 - Porta patente ($1.500) \n n2 - Casco ($17.500) \n n3 - Lubricante de cadena ($5.300) \n n4 - Bujia NGK Japon ($1.900) \n n5 - Aceite de motor ($4.000)")
-
-const Portapatente = 1500, Casco = 17500, Lubricante = 5300, Bujia = 1900, Aceitemotor = 4000;
 let totalcompra = 0;
 let contador1 = 0, contador2 = 0, contador3 = 0, contador4 = 0, contador5 = 0;
-let productos = 0;
+let producto1 = 3500, producto2 = 3500, producto3 = 8000, producto4 = 3100, producto5= 1500
 let cantidad;
+
+const carrito = [];
+
 
 function producto(num1, num2){
   let resultado = (parseFloat(num1))*(parseFloat(num2));
@@ -40,31 +48,41 @@ do{
     switch (productos){
         case 1:
            cantidad = cantidades();
-            totalcompra+= producto(Portapatente, cantidad);
-            contador1+=cantidad;
+            totalcompra+= producto(producto1, cantidad);
+            let compra1 = new Producto(contador1+=cantidad);
+                    carrito.push(compra1);
+                    alert ("su producto ha sido sumado a su carrito")
             break;
         case 2:
             cantidad = cantidades();
-            totalcompra+= producto(Casco, cantidad);
-            contador2+=cantidad;
+            totalcompra+= producto(producto2, cantidad);
+            let compra2 = new Producto(contador1+=cantidad);
+                    carrito.push(compra2);
+                    alert ("su producto ha sido sumado a su carrito")
             break;
         case 3:
             cantidad = cantidades();
-            totalcompra+= producto(Lubricante, cantidad);
-            contador3+=cantidad;
+            totalcompra+= producto(producto3, cantidad);
+            let compra3 = new Producto(contador1+=cantidad);
+                    carrito.push(compra3);
+                    alert ("su producto ha sido sumado a su carrito")
             break;
         case 4:
             cantidad = cantidades();
-            totalcompra+= producto(Bujia, cantidad);
-            contador4+=cantidad;
+            totalcompra+= producto(producto4, cantidad);
+            let compra4 = new Producto(contador1+=cantidad);
+                    carrito.push(compra4);
+                    alert ("su producto ha sido sumado a su carrito")
             break;
         case 5:
             cantidad = cantidades();
-            totalcompra+= producto(Aceitemotor, cantidad);
-            contador5+=cantidad;
+            totalcompra+= producto(producto5, cantidad);
+            let compra5 = new Producto(contador1+=cantidad);
+                    carrito.push(compra5);
+                    alert ("su producto ha sido sumado a su carrito")
             break;
         case 0: 
-            alert("Su compra es de: portapatente - (cantidad)  "+contador1+"  , casco - (cantidad)  "+contador2+"  , lubricante para cadena - (cantidad)  "+contador3+"  ,bujias - (cantidad)  "+contador4+"  ,aceite para motor - (cantidad)  "+contador5+"          su compra total es $"+totalcompra);
+            alert("Su compra es de: bujias - (cantidad)  "+contador1+"  , bujiasbr - (cantidad)  "+contador2+"  , valvulas - (cantidad)  "+contador3+"  ,platillos de valvulas - (cantidad)  "+contador4+"  ,resortes - (cantidad)  "+contador5+"          su compra total es $"+totalcompra);
             break;
         default:
             alert("Si no quiere seguir con su compra, ingrese 0");
@@ -72,4 +90,10 @@ do{
 }
 while(productos!=0);
 
-alert("Gracias por confiar en nosotros " + usuario + ". Le deseamos un buen dia");
+if (carrito.length === 0) {
+  alert("No hay productos en el carrito");
+}else{
+
+let total=carrito.reduce((total, element) => total + element.precio, 0);
+alert("el total de su compra es de :" + "$" + totalcompra); 
+}
