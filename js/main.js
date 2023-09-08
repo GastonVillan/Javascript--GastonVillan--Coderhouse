@@ -1,99 +1,174 @@
- /* segunda pre-entrega Gaston Villan*/
+/* tercera pre-entrega Gaston Villan */
 
-function Producto (nombre, precio,) {
-    this.nombre = nombre;
-    this.precio = parseFloat(precio);
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const datosDeRepuestos = [
+{
+id : 1 ,
+nombre : "valvulas de escape",
+precio : 8500,
+origen : "Japon",
+material : "Acero",
+imagen : "../imagenes/Valvulas.jpeg"
+},
+
+{
+id : 2 ,
+nombre : "Bujias ngk",
+precio : 3500,
+origen : "Brasil",
+material : "Acero",
+imagen : "../imagenes/bujiabrasil.jpeg"
+},
+
+{
+id : 3 ,
+nombre : "Arandelas de cobre",
+precio : 500,
+origen : "Argentina",
+material : "Cobre",
+imagen : "../imagenes/arandelasdecobre.jpeg"
+},
+
+{
+id : 4 ,
+nombre : "Resortes de Valvulas",
+precio : 6500,
+origen : "Argentina",
+material : "Alambre de Acero",
+imagen: "../imagenes/resortesdevalvulas.jpg",
 }
 
-const n1_bujia = new Producto("Bujia", 3500);
-const n2_bujiabr = new Producto("Bujiabr", 3500);
-const n3_valvulas = new Producto("valvulas", 8000);
-const n4_platillos = new Producto("PLATILLOS DE VALVULAS", 3100);
-const n5_resortes = new Producto("Resortes de pantalla", 1500);
+    ];
 
-console.table(n1_bujia);
-console.table(n2_bujiabr);
-console.table(n3_valvulas);
-console.table(n4_platillos);
-console.table(n5_resortes);
-
-let totalcompra = 0;
-let contador1 = 0, contador2 = 0, contador3 = 0, contador4 = 0, contador5 = 0;
-let producto1 = 3500, producto2 = 3500, producto3 = 8000, producto4 = 3100, producto5= 1500
-let cantidad;
-
-const carrito = [];
+    let carrito = [];
+    const moneda = '$';
+    const DOMitems = document.querySelector('#items');
+    const DOMcarrito = document.querySelector('#carrito');
+    const DOMtotal = document.querySelector('#total');
+    const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+    const miLocalStorage = window.localStorage;
 
 
-function producto(num1, num2){
-  let resultado = (parseFloat(num1))*(parseFloat(num2));
-  return resultado;
-}
-function cantidades(){
-  let numero = false;
-  while (!numero){
-      cantidad = parseFloat(prompt("Ingresar cantidad"));
-      numero = !isNaN(cantidad);
-      if (numero && (cantidad > 0)){
-          return cantidad;
-          break;
-      }
-      else{
-          alert("ingreso un numero por favor");
-      }
-  }
-}
-do{
-    productos = parseFloat(prompt("Ingrese el numero del producto, por ejemplo(1,2,3,4 o 5). Para salir ingresa 0"));
-    switch (productos){
-        case 1:
-           cantidad = cantidades();
-            totalcompra+= producto(producto1, cantidad);
-            let compra1 = new Producto(contador1+=cantidad);
-                    carrito.push(compra1);
-                    alert ("su producto ha sido sumado a su carrito")
-            break;
-        case 2:
-            cantidad = cantidades();
-            totalcompra+= producto(producto2, cantidad);
-            let compra2 = new Producto(contador1+=cantidad);
-                    carrito.push(compra2);
-                    alert ("su producto ha sido sumado a su carrito")
-            break;
-        case 3:
-            cantidad = cantidades();
-            totalcompra+= producto(producto3, cantidad);
-            let compra3 = new Producto(contador1+=cantidad);
-                    carrito.push(compra3);
-                    alert ("su producto ha sido sumado a su carrito")
-            break;
-        case 4:
-            cantidad = cantidades();
-            totalcompra+= producto(producto4, cantidad);
-            let compra4 = new Producto(contador1+=cantidad);
-                    carrito.push(compra4);
-                    alert ("su producto ha sido sumado a su carrito")
-            break;
-        case 5:
-            cantidad = cantidades();
-            totalcompra+= producto(producto5, cantidad);
-            let compra5 = new Producto(contador1+=cantidad);
-                    carrito.push(compra5);
-                    alert ("su producto ha sido sumado a su carrito")
-            break;
-        case 0: 
-            alert("Su compra es de: bujias - (cantidad)  "+contador1+"  , bujiasbr - (cantidad)  "+contador2+"  , valvulas - (cantidad)  "+contador3+"  ,platillos de valvulas - (cantidad)  "+contador4+"  ,resortes - (cantidad)  "+contador5+"          su compra total es $"+totalcompra);
-            break;
-        default:
-            alert("Si no quiere seguir con su compra, ingrese 0");
+
+    function renderizarProductos() {
+        datosDeRepuestos.forEach((info) => {
+            const elemento = document.createElement('div');
+            elemento.classList.add('card', 'col-sm-4');
+
+            const accionesnodo = document.createElement('div');
+            accionesnodo.classList.add('card-body');
+
+            const titulo = document.createElement('h5');
+            titulo.classList.add('card-title');
+            titulo.textContent = info.nombre;
+
+            const Imagen = document.createElement('img');
+            Imagen.classList.add('img-fluid');
+            Imagen.setAttribute('src', info.imagen);
+
+            const Precio = document.createElement('p');
+            Precio.classList.add('card-text');
+            Precio.textContent = `${info.precio}${moneda}`;
+ 
+            const accionBoton = document.createElement('button');
+            accionBoton.classList.add('btn', 'btn-primary');
+            accionBoton.textContent = '+';
+            accionBoton.setAttribute('marcador', info.id);
+            accionBoton.addEventListener('click', sumarProductoAlCarrito);
+
+            accionesnodo.appendChild(Imagen);
+            accionesnodo.appendChild(titulo);
+            accionesnodo.appendChild(Precio);
+            accionesnodo.appendChild(accionBoton);
+            elemento.appendChild(accionesnodo);
+            DOMitems.appendChild(elemento);
+        });
     }
-}
-while(productos!=0);
 
-if (carrito.length === 0) {
-  alert("No hay productos en el carrito");
-}else{
 
-let total=carrito.reduce((total, element) => total + element.precio, 0);
-alert("el total de su compra es de :" + "$" + totalcompra); 
-}
+    function sumarProductoAlCarrito(compra) {
+        carrito.push(compra.target.getAttribute('marcador'))
+        renderizarCarrito();
+        guardarCarritoEnLocalStorage();
+    }
+
+    /* productos en el carrito*/
+
+    
+    function renderizarCarrito() {
+        DOMcarrito.textContent = '';
+        const carritoSinDuplicados = [...new Set(carrito)];
+
+        carritoSinDuplicados.forEach((item) => {
+            const miItem = datosDeRepuestos.filter((itemdatosDeRepuestos) => {
+                return itemdatosDeRepuestos.id === parseInt(item);
+            });
+
+            const numeroUnidadesItem = carrito.reduce((total, itemId) => {
+                return itemId === item ? total += 1 : total;
+            }, 0);
+
+            const elemento = document.createElement('li');
+            elemento.classList.add('list-group-item', 'text-right', 'mx-2');
+            elemento.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${moneda}`;
+            const miBoton = document.createElement('button');
+            miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+            miBoton.textContent = 'X';
+            miBoton.style.marginLeft = '1rem';
+            miBoton.dataset.item = item;
+            miBoton.addEventListener('click', borrarItemCarrito);
+            elemento.appendChild(miBoton);
+            DOMcarrito.appendChild(elemento);
+        });
+
+        DOMtotal.textContent = calcularTotal();
+    }
+
+
+    function borrarItemCarrito(compra) {o
+        const id = compra.target.dataset.item;
+        carrito = carrito.filter((carritoId) => {
+            return carritoId !== id;
+        });
+
+        renderizarCarrito();
+        guardarCarritoEnLocalStorage();
+
+    }
+
+
+    function calcularTotal() {
+        return carrito.reduce((total, item) => {
+            const miItem = datosDeRepuestos.filter((itemdatosDeRepuestos) => {
+                return itemdatosDeRepuestos.id === parseInt(item);
+            });
+            return total + miItem[0].precio;
+        }, 0).toFixed(2);
+    }
+
+
+    function vaciarCarrito() {
+        carrito = [];
+        renderizarCarrito();
+        localStorage.clear();
+
+    }
+
+    function guardarCarritoEnLocalStorage () {
+        miLocalStorage.setItem('carrito', JSON.stringify(carrito));
+    }
+
+    function cargarCarritoDeLocalStorage () {
+        if (miLocalStorage.getItem('carrito') !== null) {
+            carrito = JSON.parse(miLocalStorage.getItem('carrito'));
+        }
+    }
+
+    DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+
+    cargarCarritoDeLocalStorage();
+    renderizarProductos();
+    renderizarCarrito();
+});

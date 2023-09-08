@@ -1,0 +1,233 @@
+h1, h2, h3, h4 {
+    background-color: rgba(79, 36, 36, 0.628);
+    color: rgba(238, 232, 232, 0.981);
+    border: solid 2px black;
+    padding: 20px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  footer ul li, footer ul, .navbar-mia, .tex-navbar, .navbar-nv, ul li, ul, .lista-mia, .horarios, .card-mias, p, .texto_main {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  .card-mias, .img-mias, .carrousel-mio {
+    color: white;
+    border: 2px solid black;
+    padding: 2px;
+  }
+  
+  /*generales*/
+  * {
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  body {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    list-style: none;
+    text-decoration: none;
+    background: linear-gradient(180deg, rgb(0, 0, 3) 0%, rgb(97, 0, 9) 14%, rgb(126, 1, 26) 50%, rgb(97, 0, 9) 86%, rgb(0, 0, 0) 100%);
+    height: 100%;
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  .conteiner-mio {
+    padding: none;
+    margin: 50px;
+  }
+  
+  header {
+    height: 500px;
+    background-image: url(../imagenes/motocicletas-mas-importantes-por-paises.jpg);
+    background-size: cover;
+    overflow-x: hidden;
+  }
+  
+  main {
+    margin: 100px;
+    margin-top: 100px;
+    padding: 100px 0px;
+  }
+  
+  .texto_main {
+    padding: 200px;
+  }
+  
+  p {
+    text-align: center;
+  }
+  
+  .carrousel-espacio {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .carrousel-mio {
+    padding: 30px;
+    margin: 30px;
+  }
+  
+  .carrousel-mio-galeria {
+    background-color: black;
+    color: white;
+    border: 3px solid black;
+  }
+  
+  .img-mias {
+    padding: 2px;
+    margin: 30px;
+    background-color: white;
+  }
+  
+  .card-mias {
+    background-color: black;
+  }
+  
+  .boton-form {
+    background-color: white;
+    color: black;
+    border: 1.5px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .boton-form:hover {
+    background-color: rgb(233, 106, 106);
+    color: black;
+    border: 1.5px solid rgb(237, 134, 134);
+    transition: 0, 8s;
+  }
+  
+  .form-mio {
+    background-color: white;
+    color: black;
+    border: 1.5 solid black;
+    text-decoration: none;
+  }
+  .form-mio:hover {
+    background-color: rgb(233, 106, 106);
+    color: black;
+    border: 1.5px solid rgb(237, 134, 134);
+    transition: 0, 8s;
+  }
+  
+  .horarios {
+    background-color: rgba(0, 0, 0, 0.529);
+    color: white;
+    border: 3px solid black;
+  }
+  
+  .list-group-item {
+    background-color: rgba(161, 20, 20, 0.229);
+    color: white;
+    border: black;
+  }
+  
+  .lista-mia {
+    background-color: rgb(156, 22, 22);
+    color: white;
+    border: 4px solid rgb(6, 6, 6);
+  }
+  
+  ul {
+    list-style: none;
+  }
+  ul li {
+    list-style: none;
+  }
+  
+  .navbar-nv {
+    display: flex;
+    flex-direction: row-reverse;
+    color: white;
+  }
+  
+  .tex-navbar {
+    margin-left: 20px;
+    font-weight: bold;
+  }
+  
+  .navbar-mia {
+    list-style: none;
+    background-color: rgb(167, 7, 7);
+  }
+  
+  .navbar-cabeza {
+    color: black;
+    padding-top: 200px;
+  }
+  
+  .boton-mio {
+    background-color: black;
+  }
+  
+  .titulo-nav {
+    background-color: rgb(1, 1, 26);
+    color: white;
+    border: 3px solid rgba(57, 57, 57, 0.944);
+    list-style: none;
+  }
+  
+  .navbar-pie {
+    text-align: initial;
+    color: black;
+  }
+  
+  footer {
+    background-color: rgba(30, 30, 30, 0.591);
+    color: rgb(248, 246, 246);
+    border: none;
+    padding: 3px;
+    overflow-x: hidden;
+  }
+  footer ul {
+    list-style: none;
+  }
+  footer ul li a {
+    display: inline-block;
+    justify-content: initial;
+    text-align: right;
+    color: white;
+    text-decoration: none;
+  }
+  footer ul li a:hover {
+    text-decoration: dotted;
+    color: red;
+  }
+  
+
+  @media screen and (max-width: 576px) {
+    body {
+      padding: none;
+      margin: 2px 0.5px;
+      margin-top: 3px;
+      height: initial;
+    }
+    header {
+      padding: none;
+      margin: 25px;
+      height: 100%;
+      background-image: none;
+    }
+    main {
+      padding: 10px;
+      margin: 30px 50px;
+    }
+    .img-mias {
+      background-color: black;
+      color: none;
+      border: 1px solid rgb(120, 4, 4);
+      padding: 1.5px 2px;
+      margin: 8px;
+    }
+    footer {
+      padding: 20px;
+    }
+  }
