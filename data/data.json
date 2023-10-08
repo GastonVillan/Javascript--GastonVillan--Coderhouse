@@ -1,0 +1,82 @@
+[
+    {
+       "id":1,
+       "nombre":"Valvulas de escape",
+       "precio":8500,
+       "origen":"Japon",
+       "material":"Acero",
+       "imagen":"../imagenes/Valvulas.jpeg"
+    },
+    {
+       "id":2,
+       "nombre":"Bujias ngk",
+       "precio":3500,
+       "origen":"Brasil",
+       "material":"Acero",
+       "imagen":"../imagenes/bujiabrasil.jpeg"
+    },
+    {
+       "id":3,
+       "nombre":"Arandelas de cobre",
+       "precio":500,
+       "origen":"Argentina",
+       "material":"Cobre",
+       "imagen":"../imagenes/arandelasdecobre.jpeg"
+    },
+    {
+       "id":4,
+       "nombre":"Resortes de Valvulas",
+       "precio":6500,
+       "origen":"Argentina",
+       "material":"Alambre de Acero",
+       "imagen":"../imagenes/resortesdevalvulas.jpg"
+    },
+    {
+        "id":5,
+        "nombre": "Filtro de Aceite",
+        "precio":4700,
+        "origen": "Japon" ,
+        "material": "papel de celulosa, algodón y materiales sintéticos",
+        "imagen": "../imagenes/filtrodeaceite.jpeg"
+    },
+    {
+        "id":6,
+        "nombre": "Filtro de Nafta" ,
+        "precio":1200,
+        "origen": "Argentina" ,
+        "material": "plástico" ,
+        "imagen": "../imagenes/filtrodenafta.jpeg"
+    },
+    {
+        "id": 7,
+        "nombre": "Chicler de Alta" ,
+        "precio": 9000,
+        "origen": "Argentina",
+        "material": "Acero",
+        "imagen": "../imagenes/Chicler-de-alta-y-de-baja-para-moto.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "Chicler de Baja " ,
+        "precio": 16000,
+        "origen": "Argentina" ,
+        "material": "acero" ,
+        "imagen": "../imagenes/Chicler-de-alta-y-de-baja-para-moto.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": "Flotante para carburadores" ,
+        "precio": 25000,
+        "origen": "Taiwan" ,
+        "material": " " ,
+        "imagen": "../imagenes/flotadores.jpg"
+    },
+    {
+        "id":10,
+        "nombre": "Agujas punzua" ,
+        "precio": 1700,
+        "origen": "Argentina" ,
+        "material": "metal" ,
+        "imagen": "../imagenes/agujas.jpeg"
+    }
+ ]

@@ -11,15 +11,18 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <meta name="descripcion" content="Ponete en contacto con nosotros o visitanos en nuestro local dentro de los horarias y dias disponibles. Consulta con nostros por tu trabajo a realizar">
     <meta name="keywords" content="villan motos, taller mecanico, motos japonesas, encontranos, nuestra dirección, dias laborales, horarios disponibles, nuestros telefonos, nuestras redes, cordoba capital, Argentina">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
     <link rel="manifest" href="../favicon/site.webmanifest">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/main.js"></script>
+
     
-    <title>ENCONTRANOS // VILLAN MOTOS</title>
+    <title>FORMULARIO // VILLAN MOTOS</title>
 
 </head>
 <body>
@@ -60,7 +63,53 @@
                 <h1>Villan Motos</h1>
                 <p> Conoce nuestros servicios y consulta por tu turno </p>
             </div>
+            <h2>Tipos de Trabajos</h2>
+            <p><b> PARA PEDIR TURNOS O SOLICITAR MAYOR INFORMACIÓN</b></p>
+
+            <ul>
+              <li>Chequeo de fallas en la motocicleta</li>
+              <li>Services de Chequeo</li>
+              <li>Primer Services</li>
+              <li>Services de mantenimiento</li>
+              <li>Services Completo</li>
+              <li>Carburacion</li>
+              <li>Enderezado de chasis</li>
+              <li>Revision de seguro para choques</li>
+            </ul>
           </div>
+          <h3>FORMULARIO PARA CONTACTARNOS</h2>
+          <form id="formulario-contacto">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre y apellido</label>
+                <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Numero de telefono</label>
+                <input type="text" class="form-control" id="telefono" required>
+            </div>
+            <div class="mb-3">
+                <label for="Marca" class="form-label">Marca de moto</label>
+                <input type="text" class="form-control" id="Marca" required>
+            </div>
+            <div class="mb-3">
+                <label for="cilindrada" class="form-label">Cilindrada de motocicleta</label>
+                <input type="text" class="form-control" id="cilindrada" required>
+            </div>
+            <div class="mb-3">
+                <label for="Detalle" class="form-label">Detalle del trabajo</label>
+                <input type="text" class="form-control" id="Detalle" required>
+            </div>
+            <div class="mb-3">
+                <label for="correo" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="correo" required>
+            </div>
+            <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+        
         </section>
         <section>
           <div data-aos="fade-up"
